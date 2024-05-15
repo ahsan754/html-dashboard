@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+           <!-- Sidebar -->
+<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+    <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Receivables
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Returns
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Customers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Payable
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Sales
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Inventory
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Imports
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Cutting Tickets
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    EDI
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-md-block d-none" href="#">
+                    Showroom
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+            <!-- Main content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-sm-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            This week
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Profile Section -->
+                <div class="d-sm-flex align-items-center">
+                    <img src="img/ahsan.jpg" alt="Profile" class="rounded-circle" width="50">
+                    <div class="ml-3">
+                        <h5>Md Ahsan</h5>
+                        <p>Welcome back,</p>
+                    </div>
+                </div>
+
+                <!-- Dashboard Stats -->
+                <div class="row mt-4">
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-white bg-primary h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-chart-area"></i>
+                                </div>
+                                <div class="mr-5">Total Revenue: $32,350.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-white bg-success h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-dollar-sign"></i>
+                                </div>
+                                <div class="mr-5">Total Expenses: $6000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-white bg-warning h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-clipboard-list"></i>
+                                </div>
+                                <div class="mr-5">Accounts Receivable: $56,034.00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-white bg-danger h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-comments"></i>
+                                </div>
+                                <div class="mr-5">Accounts Payable: $67,083.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Invoices
+                            </div>
+                            <div class="card-body">
+                                <canvas id="invoicesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Sales Forecast
+                            </div>
+                            <div class="card-body">
+                                <canvas id="salesForecastChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Chart.js for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html
